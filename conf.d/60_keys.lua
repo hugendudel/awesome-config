@@ -1,7 +1,13 @@
 local awful = require("awful")
+-- Notification library
 local naughty = require("naughty")
+-- Menu library
+local menubar = require("menubar")
 
-all_tags = {}
+local wibox = require("wibox")
+-- Theme handling library
+local beautiful = require("beautiful")
+
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

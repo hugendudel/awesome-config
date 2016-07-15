@@ -18,6 +18,8 @@ for i = 1, 10 do
   table.insert(mytags[s], i)
 end
 
+all_tags = {}
+
 for s = 1, screen.count() do
   -- Each screen has its own tag table.
   tags[s] = awful.tag(mytags[s], s, layouts[1])

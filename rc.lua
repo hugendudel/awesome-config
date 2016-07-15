@@ -30,6 +30,20 @@ do
 end
 -- }}}
 
+-- {{{ Basic configuration
+-- Set path configuration
+local configpath = awful.util.getdir('config')
+scriptpath = configpath .. "/scripts/"
+-- Set modifier key for all operations
+modkey = "Mod4"
+-- This is used later as the default terminal and editor to run.
+terminal = "terminator"
+editor = os.getenv("EDITOR") or "vim"
+editor_cmd = terminal .. " -e " .. editor
+-- }}}
+
+--local log = require('lunaconf.log')
+
 -- {{{ Load custom scripts from custom.d directory
 local lfs = require('lfs')
 local confs = {}
@@ -45,10 +59,10 @@ table.sort(confs)
 for i,conf in pairs(confs) do
 	local config = awful.util.checkfile(conf)
 	if type(config) == 'function' then
-		log.info('Loading config file %s', conf)
+	--	log.info('Loading config file %s', conf)
 		config()
 	else
-		log.err('Skipping %s due to error: %s', conf, config)
+	--	log.err('Skipping %s due to error: %s', conf, config)
 	end
 end
 -- }}}

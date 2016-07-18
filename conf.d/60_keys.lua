@@ -17,8 +17,11 @@ local beautiful = require("beautiful")
 modkey = "Mod4"
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-  awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-  awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
+  --movement
+--  awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
+--  awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
+  awful.key({ modkey,           }, "Left",   function() awful.client.focus.global_bydirection("left")  end ),
+  awful.key({ modkey,           }, "Right",  function() awful.client.focus.global_bydirection("right") end ),
   awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
   awful.key({ modkey,           }, "j",
     function ()

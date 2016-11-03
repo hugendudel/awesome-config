@@ -6,20 +6,12 @@ local beautiful = require("beautiful")
 local menubar = require("menubar")
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e sl -alF" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+mymainmenu = awful.menu({ items = {
+  { "noob noob", terminal .. " -e 'sl -alF'" },
+  { "smile!", "google-chrome-stable --app=https://www.youtube.com/embed/OaSEGZ3Xe_E"}
+}})
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it

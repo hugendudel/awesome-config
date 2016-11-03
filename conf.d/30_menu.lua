@@ -9,7 +9,7 @@ local menubar = require("menubar")
 
 mymainmenu = awful.menu({ items = {
   { "noob noob", terminal .. " -e 'sl -alF'" },
-  { "smile!", "google-chrome-stable --app=https://www.youtube.com/embed/OaSEGZ3Xe_E"}
+  { "smile!", "google-chrome-stable --start-fullscreen --kiosk --app=https://www.youtube.com/embed/OaSEGZ3Xe_E?autoplay=1"}
 }})
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
